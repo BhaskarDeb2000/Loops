@@ -1,18 +1,10 @@
-function characterLow(name) {
-  return name.toLowerCase().charAt(1);
-}
-function characterUp(name) {
-  return characterLow(name);
-}
 function eligibility(name, age) {
   if (age >= 18) {
-    return `${characterUp(name)} are eligible to drink`;
+    return `${name} are eligible to drink.`;
   } else {
-    return `${characterUp(name)} can't drink honey, here's a glass of milk`;
+    return `${name} can't drink alcohol.`;
   }
 }
-
-// console.log(eligibility("alak", 20));
 
 const array = [
   {
@@ -57,6 +49,10 @@ const array = [
   },
 ];
 
+let result = "";
+
 for (let index = 0; index < array.length; index++) {
-  console.log(eligibility(array[index].name));
+  result += eligibility(array[index].name, array[index].age) + "\n";
 }
+
+console.log(result);
