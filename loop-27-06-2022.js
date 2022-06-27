@@ -31,12 +31,23 @@ function mailConfirmation(a, b, c) {
     return "I don't know you";
   }
 }
+function initials(a) {
+  return (
+    a.charAt(0).toUpperCase() +
+    a.split(" ").slice(-1).join().charAt(0).toUpperCase() +
+    `\n`
+  );
+}
 let result = "";
+let initial = "";
 for (let index = 0; index < array.length; index++) {
   result += mailConfirmation(
     array[index].email,
     array[index].confirmEmail,
     array[index].name
   );
+  initial += initials(array[index].name);
 }
+
 console.log(result);
+console.log(initial);

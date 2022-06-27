@@ -10,7 +10,9 @@
     "passFunction": "nodemon howToPassfunctionArgument.js",
     "basicLoop": "nodemon basicLoop.js",
     "incrementWords": "nodemon incrementingWords.js",
-    "27June": "nodemon loop-27-06-2022.js"
+    "for27June": "nodemon loop-27-06-2022.js",
+    "forEach27June": "nodemon ForEach-27-06-2022.js",
+    "filter27June": "nodemon filter-27-06-2022.js"
   },
   "repository": {
     "type": "git",
