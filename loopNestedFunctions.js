@@ -53,4 +53,7 @@ function lastLetterCapital(f, u) {
 
 for (let index = 0; index < people.length; index++) {
   console.log(mail(people[index].email, people[index].name));
+  console.log(ageValidity(people[index].age, people[index].name));
+  console.log(initial(people[index].userName));
+  console.log(lastLetterCapital(people[index].name, people[index].userName));
 }
