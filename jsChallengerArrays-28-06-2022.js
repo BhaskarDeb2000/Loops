@@ -55,7 +55,7 @@ function specificElementRemover(a, b) {
 console.log(specificElementRemover([1, 2, 3], 2));
 
 console.log("\nTask 9= Count number of negative values in array");
-var ar = [[0, 9, 1]];
+var ar = [[0, -9, 1]];
 
 function negativeNumberCounter(ar) {
   var counter = [0];
@@ -109,3 +109,53 @@ function equalFinder(a) {
   });
 }
 console.log(equalFinder([true, true, true, true]));
+
+console.log("\nTask 14= Merge an arbitrary number of arrays with 1 argument");
+function arrayMerger(...a) {
+  return a.flat(); // flat merge multiple arrays into one
+}
+console.log(arrayMerger([1, 2, 3], [4, 5, 6], [7, 8, 9]));
+
+console.log("\nTask 15: Sort array by object property with 1 argument");
+function objectSorter(a) {
+  return a.sort();
+}
+console.log(
+  objectSorter([
+    { a: 1, b: 7 },
+    { a: 2, b: 1 },
+  ])
+);
+// console.log("\nTask16= Merge two arrays with duplicate values");
+// function duplicateObjectMerger(a) {
+//   return a.flat();
+// }
+// console.log(duplicateObjectMerger([1, 2, 3], [3, 4, 5]));
+
+// console.log("\nTask 17: Merge two arrays with duplicate values");
+// function sortCharacters(a) {}
+
+console.log("\nTask 18= Define an array with conditional elements");
+function conditionalArray(a, b) {
+  // return [...(b > 5 ? [b] : [0]), ...a];
+  if (b >= 6) {
+    a.push(b);
+    a.unshift(a.pop());
+    return a;
+  } else {
+    let b = 0;
+    a.push(b);
+    a.unshift(a.pop());
+    return a;
+  }
+}
+console.log(conditionalArray([1, 2, 3], 2)); //[6,1,2,3]
+
+// console.log("\nTask 19= Sum up all array elements with values greater than");
+// function arrayAdd(a, b) {
+//   return;
+// }
+// console.log("\nTask 20= Create a range of numbers");
+// function rangeFinder(a) {
+//   return
+// }
