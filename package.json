@@ -12,7 +12,10 @@
     "incrementWords": "nodemon incrementingWords.js",
     "for27June": "nodemon loop-27-06-2022.js",
     "forEach27June": "nodemon ForEach-27-06-2022.js",
-    "filter27June": "nodemon filter-27-06-2022.js"
+    "filter27June": "nodemon filter-27-06-2022.js",
+    "ArrayChallenges28June":"nodemon jsChallengerArrays-28-06-2022.js",
+    "forLoop2July": "nodemon forLoop-02-07-2022.js",
+    "habijabi": "nodemon Habijabi.js"
   },
   "repository": {
     "type": "git",
