@@ -55,18 +55,14 @@ function specificElementRemover(a, b) {
 console.log(specificElementRemover([1, 2, 3], 2));
 
 console.log("\nTask 9= Count number of negative values in array");
-var ar = [[0, -9, 1]];
-
-function negativeNumberCounter(ar) {
-  var counter = [0];
-  ar.forEach(function (a) {
-    if (a < 0) counter[0]++;
+function faunction(a) {
+  const d = a.filter((e) => {
+    const c = e < 0;
+    return c;
   });
-  return counter;
+  return d.length;
 }
-
-var result = negativeNumberCounter(ar);
-console.log("" + result);
+console.log(faunction([0, 9, 1]));
 console.log(
   "\nTask 10= Sort an array of numbers in descending order with one argument"
 );
@@ -126,36 +122,67 @@ console.log(
     { a: 2, b: 1 },
   ])
 );
-// console.log("\nTask16= Merge two arrays with duplicate values");
-// function duplicateObjectMerger(a) {
-//   return a.flat();
-// }
-// console.log(duplicateObjectMerger([1, 2, 3], [3, 4, 5]));
+console.log("\nTask16= Merge two arrays with duplicate values");
+function duplicateObjectMerger(a) {
+  return a.flat().unique();
+}
+console.log(duplicateObjectMerger([1, 2, 3], [3, 4, 5]));
 
 // console.log("\nTask 17: Merge two arrays with duplicate values");
 // function sortCharacters(a) {}
 
-console.log("\nTask 18= Define an array with conditional elements");
-function conditionalArray(a, b) {
-  // return [...(b > 5 ? [b] : [0]), ...a];
-  if (b >= 6) {
-    a.push(b);
-    a.unshift(a.pop());
-    return a;
+console.log("\nTask 18= Sum up all array elements with values greater than");
+function arraySummation(a, b) {
+  const c = a.filter((e) => {
+    return e > b;
+  });
+  return eval(c.join("+"));
+}
+console.log(arraySummation([1, 2, 3, 4, 5, 6, 7], 2));
+console.log("\nTask 19= Create a range of numbers");
+function rangeFinder(min, max) {
+  if (min === max) {
+    return [max];
   } else {
-    let b = 0;
-    a.push(b);
-    a.unshift(a.pop());
-    return a;
+    const c = rangeFinder(min, max - 1);
+    c.push(max);
+    return c;
   }
 }
-console.log(conditionalArray([1, 2, 3], 2)); //[6,1,2,3]
+console.log(rangeFinder(2, 10));
 
-// console.log("\nTask 19= Sum up all array elements with values greater than");
-// function arrayAdd(a, b) {
-//   return;
-// }
-// console.log("\nTask 20= Create a range of numbers");
-// function rangeFinder(a) {
-//   return
-// }
+console.log("\nTask 20= Define an array with conditional elements");
+function arrayAddWithConditions(arr, num) {
+  if (num < 6) {
+    return arr + arr.unshift(0), arr;
+  } else {
+    return arr + arr.unshift(num), arr;
+  }
+}
+console.log(arrayAddWithConditions([1, 2, 3], 6));
+
+console.log("\nTask 21= Sort array by object property");
+function groupIt(arr) {
+  let groups = {};
+
+  let firstChar = arr.map((el) => el[0]);
+  let firstCharFilter = firstChar.filter((el, id) => {
+    return firstChar.indexOf(el) === id;
+  });
+
+  firstCharFilter.forEach((el) => {
+    groups[el] = [];
+  });
+
+  firstCharFilter.forEach((char) => {
+    for (let word of arr) {
+      if (word[0] == char) {
+        groups[char].push(word);
+      }
+    }
+  });
+
+  return groups;
+}
+
+groupIt(["hola", "adios", "chao", "hemos", "accion"]);
