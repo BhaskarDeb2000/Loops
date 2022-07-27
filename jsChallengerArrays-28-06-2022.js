@@ -122,11 +122,11 @@ console.log(
     { a: 2, b: 1 },
   ])
 );
-console.log("\nTask16= Merge two arrays with duplicate values");
-function duplicateObjectMerger(a) {
-  return a.flat().unique();
-}
-console.log(duplicateObjectMerger([1, 2, 3], [3, 4, 5]));
+// console.log("\nTask16= Merge two arrays with duplicate values");
+// function duplicateObjectMerger(a) {
+//   return a.flat().unique();
+// }
+// console.log(duplicateObjectMerger([1, 2, 3], [3, 4, 5]));
 
 // console.log("\nTask 17: Merge two arrays with duplicate values");
 // function sortCharacters(a) {}
@@ -185,4 +185,13 @@ function groupIt(arr) {
   return groups;
 }
 
-groupIt(["hola", "adios", "chao", "hemos", "accion"]);
+console.log(groupIt(["hola", "adios", "chao", "hemos", "accion"]));
+``;
+console.log("\nTask 22: Get every nth element of an array");
+function nthElementFinder(a, n) {
+  return a.filter((e, i, a) => {
+    const test = (i + 1) % n === 0;
+    return test;
+  });
+}
+console.log(nthElementFinder([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
