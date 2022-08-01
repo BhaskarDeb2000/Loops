@@ -206,12 +206,12 @@
 //   ])
 // );
 
-function arraySorter1(arr) {
-  return arr.map((e) => {
-    return e.charCodeAt(0);
-  });
-}
-console.log(arraySorter1(["Alf", "Alice", "Ben"]));
+// function arraySorter1(arr) {
+//   return arr.map((e) => {
+//     return e.charCodeAt(0);
+//   });
+// }
+// console.log(arraySorter1(["Alf", "Alice", "Ben"]));
 
 // console.log("\nTask16= Merge two arrays with duplicate values");
 // function duplicateObjectMerger(a, b) {
@@ -234,3 +234,27 @@ console.log(arraySorter1(["Alf", "Alice", "Ben"]));
 //   });
 // }
 // console.log(nthElementFinder([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
+
+// function filterFunction(a) {
+//   return a.filter((e) => {
+//     return e === 3;
+//   }).length ;
+// }
+// console.log(filterFunction([1, 2, 3, 3, 3, 4]));
+
+// function myFunction(obj) {
+//   return Object.keys(obj);
+// }
+// console.log(myFunction({ continent: "Asia", country: "Japan" }));
+
+function groupIt(arr) {
+  let obj = {};
+  arr.forEach((e, i) => {
+    return (obj[e[0].toLowerCase()] = arr.filter(
+      (ele) => ele[0].toLowerCase() == e[0].toLowerCase()
+    ));
+  });
+  return obj;
+}
+
+console.log(groupIt(["Dog", "Ant", "Bear", "Bird", "Cat"]));

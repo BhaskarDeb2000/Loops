@@ -177,7 +177,7 @@ function groupIt(arr) {
   firstCharFilter.forEach((char) => {
     for (let word of arr) {
       if (word[0] == char) {
-        groups[char].push(word);
+        groups[char.toLowerCase()].push(word);
       }
     }
   });
@@ -185,8 +185,8 @@ function groupIt(arr) {
   return groups;
 }
 
-console.log(groupIt(["hola", "adios", "chao", "hemos", "accion"]));
-``;
+console.log(groupIt(["Ant", "Bear", "Bird"]));
+
 console.log("\nTask 22: Get every nth element of an array");
 function nthElementFinder(a, n) {
   return a.filter((e, i, a) => {
